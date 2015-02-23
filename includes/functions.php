@@ -348,13 +348,7 @@
 		}
 	}
 	function is_admin(){
-		if (isset($_SESSION['privilege']) && ($_SESSION['privilege']%4)==0)
-			return true;
-		else	
-			return false;
-	}
-	function is_creator(){
-		if (isset($_SESSION['privilege']) && ($_SESSION['privilege']%8)==0)
+		if (isset($_SESSION['privilege']) && $_SESSION['privilege']>=0)
 			return true;
 		else	
 			return false;

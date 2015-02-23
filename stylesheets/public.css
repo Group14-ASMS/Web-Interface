@@ -90,6 +90,10 @@ div.message {
 	border-radius:2px;
 	margin:5px;
 }
+.post:hover{
+	background-color:grey;
+	opacity:10%;
+}
 .outercontainer{
                 width: 80%;
             max-width: 1600px;
