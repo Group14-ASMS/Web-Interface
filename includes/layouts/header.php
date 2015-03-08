@@ -11,6 +11,7 @@
 			foreach($style as $csspage){
 				echo "<link href=\"stylesheets/{$csspage}.css\" media=\"all\" rel=\"stylesheet\" type=\"text/css\" />";
 			}
+
 		}
 	
 	?>
