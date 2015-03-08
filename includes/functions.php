@@ -71,8 +71,8 @@
 		
 		$query  = "SELECT * ";
 		$query .= "FROM users ";
-		$query .= "WHERE (privilege MOD 4)=0 ";
-		$query .= "ORDER BY username ASC";
+		$query .= "WHERE clearance >1 ";
+		$query .= "ORDER BY name ASC";
 		$admin_set = mysqli_query($connection, $query);
 		confirm_query($admin_set);
 		return $admin_set;

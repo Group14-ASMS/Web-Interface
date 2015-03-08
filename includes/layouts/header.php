@@ -7,8 +7,10 @@
 <link href="stylesheets/public.css" media="all" rel="stylesheet" type="text/css" />
 
 	<?php 
-		foreach($style as $csspage){
-		echo "<link href=\"stylesheets/{$csspage}.css\" media=\"all\" rel=\"stylesheet\" type=\"text/css\" />";
+		if(isset($style)){
+			foreach($style as $csspage){
+				echo "<link href=\"stylesheets/{$csspage}.css\" media=\"all\" rel=\"stylesheet\" type=\"text/css\" />";
+			}
 		}
 	
 	?>
