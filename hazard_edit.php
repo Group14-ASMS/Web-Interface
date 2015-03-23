@@ -70,6 +70,7 @@ if(!$results_categories){
 
 if (isset($_POST['submit'])){
 
+    $inf = str_replace("'", "`", $_POST['information']);
 
     if (!is_numeric($_POST['location_x']) || !is_numeric($_POST['location_y'])){
         $message = "Location must be a numeric value!";
@@ -83,7 +84,7 @@ if (isset($_POST['submit'])){
         $update_sql = "UPDATE hazards
                 SET
                 cat = " . $_POST['category'] . ",
-                info = '" . $_POST['information'] . "',
+                info = '" . $inf . "',
                 x = " . $_POST['location_x'] . ",
                  y = " . $_POST['location_y'] . ",
                  priority = " . $_POST['priority'] .
@@ -114,7 +115,7 @@ if (isset($_POST['submit'])){
                 ?>
         </div>
         <div id="image_container">
-            <img src="<?$hazard_record['photo_id']?>">
+            <img src="<?php echo $hazard_record['photo_id']?>">
         </div>
 
         <form name="form" method="post" action="hazard_edit.php?hazard_id=<?php echo $hazard_id?>" class="form" id="hazard_form">
@@ -154,8 +155,7 @@ if (isset($_POST['submit'])){
 
 
                 <div class="left">Information:  </div>
-                <div class="right">
-                    <textarea name = 'information' rows="10" cols="40"> <?php echo $hazard_record['info']?></textarea>
+                <div class="right"><textarea name = 'information' rows="10" cols="40"> <?php echo strip_tags($hazard_record['info'])?></textarea>
                 </div>
 
                 <input type="submit" name="submit" >
