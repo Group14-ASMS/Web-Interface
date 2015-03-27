@@ -6,12 +6,10 @@
 <title>ASMS</title>
 <link href="stylesheets/public.css" media="all" rel="stylesheet" type="text/css" />
 
-	<?php 
-		if(isset($style)){
-			foreach($style as $csspage){
-				echo "<link href=\"stylesheets/{$csspage}.css\" media=\"all\" rel=\"stylesheet\" type=\"text/css\" />";
-			}
-
+	<?php
+    require_once("./includes/functions.php");
+		foreach($style as $csspage){
+		echo "<link href=\"stylesheets/{$csspage}.css\" media=\"all\" rel=\"stylesheet\" type=\"text/css\" />";
 		}
 	
 	?>
