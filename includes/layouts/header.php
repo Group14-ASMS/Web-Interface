@@ -6,10 +6,11 @@
 <title>ASMS</title>
 <link href="stylesheets/public.css" media="all" rel="stylesheet" type="text/css" />
 
-	<?php
-    require_once("./includes/functions.php");
-		foreach($style as $csspage){
-		echo "<link href=\"stylesheets/{$csspage}.css\" media=\"all\" rel=\"stylesheet\" type=\"text/css\" />";
+	<?php 
+		if(isset($style)){
+			foreach($style as $csspage){
+				echo "<link href=\"stylesheets/{$csspage}.css\" media=\"all\" rel=\"stylesheet\" type=\"text/css\" />";
+			}
 		}
 	
 	?>
@@ -20,12 +21,8 @@
 	  <?php if (is_admin()) { echo ": Admin"; } ?></h1>
 	  
 	  <?php 
-	  echo "<a href=\"./main.php\">main</a>
-			<a href=\"./login.php\">login</a>";
-	  if(logged_in())	echo "
-	  
-	  <a href=\"./home.php\">user</a>
-	  <a href=\"./logout.php\">logout</a>
-	  ";?>
+	  echo "<a href=\"./main.php\">main</a>";
+	  if(logged_in())	echo " <a href=\"./logout.php\">logout</a> ";
+	  else echo " <a href=\"./login.php\">login</a> ";?>
     </div>
 
