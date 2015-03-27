@@ -48,7 +48,8 @@
 		<noscript><input type="submit" value="Submit" name="submit"></noscript>   
 	</form>	
 	<br/>
-	
+	<table style="width:100%">
+		<tr ><th>Table Header</th></tr>
 	<?php 
 		$display_limit=10;
 		$query="SELECT * FROM hazards ORDER BY {$sort_by} {$order}";
@@ -59,22 +60,22 @@
 		while($row=mysqli_fetch_assoc($post)){
 			$namequery="SELECT username FROM users WHERE id={$row["author_id"]}";
 			$name=mysqli_fetch_assoc(mysqli_query($connection,$namequery));
-			echo "<div class=\"post\"> 
+			echo "<tr><td><div class=\"post\"> 
 					<a href=\"#hazard_edit.php?hazard_id={$row["id"]}\">view</a> 
-					<h2 style=\"text-align:center\">{$row["info"]} </h2> <hr/>";
+					<h2 style=\"text-align:center; \">{$row["info"]} </h2> <hr/>";
 				echo "<div class='info'>";	
-					echo "<div class='description'>{$row["info"]}</div>";
-					echo "<div class='location'>{$row["x"]}\",{$row["y"]}\"</div>";
-					echo "<div class='time'>{$row["time"]}</div>";						
+					echo "<div class='description'>Description:{$row["info"]}</div>";
+					echo "<div class='location'>Location:{$row["x"]}\",{$row["y"]}\"</div>";
+					echo "<div class='time'>Time of submission:{$row["time"]}</div>";						
 					if(!$row["anonymous"]){
 						echo "<div style='float:left'>by {$name["username"]}</div>";
 					}
 					echo "<hr class='clear'/>";
 				echo"</div> ";
-			echo"</div> ";
+			echo"</div> </td></tr>";
 		}
 	?>
-	
+	</table>
 	
 	
 </div><!-- close container-->
