@@ -21,7 +21,7 @@
 	  <?php if (is_admin()) { echo ": Admin"; } ?></h1>
 	  
 	  <?php 
-	  echo "<a href=\"./main.php\">main</a>";
+	  echo "<a href=\"./index.php\">main</a>";
 	  if(logged_in())	echo " <a href=\"./logout.php\">logout</a> ";
 	  else echo " <a href=\"./login.php\">login</a> ";?>
     </div>

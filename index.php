@@ -24,11 +24,12 @@
 
 
 <?php include("./includes/layouts/header.php"); ?>
+<style>
+</style>
 <div class="outercontainer">
     <?php echo message(); ?>
     <?php echo form_errors($errors); ?>
     
-    <h2>Hazards</h2>
 	
 	<form method="post" action="" style="float:left">
 		<label>Sort By:</label>
@@ -48,8 +49,8 @@
 		<noscript><input type="submit" value="Submit" name="submit"></noscript>   
 	</form>	
 	<br/>
-	<table style="width:100%">
-		<tr ><th>Table Header</th></tr>
+	<ul class="listmenu">
+		<h1>Hazards</h1>
 	<?php 
 		$display_limit=10;
 		$query="SELECT * FROM hazards ORDER BY {$sort_by} {$order}";
@@ -60,22 +61,22 @@
 		while($row=mysqli_fetch_assoc($post)){
 			$namequery="SELECT username FROM users WHERE id={$row["author_id"]}";
 			$name=mysqli_fetch_assoc(mysqli_query($connection,$namequery));
-			echo "<tr><td><div class=\"post\"> 
-					<a href=\"#hazard_edit.php?hazard_id={$row["id"]}\">view</a> 
-					<h2 style=\"text-align:center; \">{$row["info"]} </h2> <hr/>";
-				echo "<div class='info'>";	
-					echo "<div class='description'>Description:{$row["info"]}</div>";
-					echo "<div class='location'>Location:{$row["x"]}\",{$row["y"]}\"</div>";
-					echo "<div class='time'>Time of submission:{$row["time"]}</div>";						
+			echo "<li id=\"{$row["id"]}\"> 
+					<h2  ><a href=\"#{$row["id"]}\">{$row["info"]} </a></h2>";
+				echo "<p>";
+					echo "<a href=\"./hazard_edit.php?hazard_id={$row["id"]}\">view</a><br>";
+					echo "Description:{$row["info"]}<br>";
+					echo "Location:{$row["x"]}\",{$row["y"]}\"<br>";
+					echo "Time of submission:{$row["time"]}<br>";						
 					if(!$row["anonymous"]){
-						echo "<div style='float:left'>by {$name["username"]}</div>";
+						echo "by {$name["username"]}";
 					}
-					echo "<hr class='clear'/>";
-				echo"</div> ";
-			echo"</div> </td></tr>";
+					
+				echo"</p> ";
+			echo"</li>";
 		}
 	?>
-	</table>
+	</ul>
 	
 	
 </div><!-- close container-->

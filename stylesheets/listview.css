@@ -16,3 +16,68 @@
 .clear{
 	clear: both;
 }
+.listmenu h1 {
+    padding: 20px 10px;
+    margin: 0 0 20px 0;
+    font-size: 18pt;
+    font-weight: normal;
+    background: rgb(144,144,144);
+    background: rgba(255,255,255,.1);
+}
+.listmenu {
+    padding: 10px 0;
+    margin: 0;
+    list-style-type: none;
+}
+.listmenu h2 {
+    margin:  0;
+    border: solid 1px grey;
+    padding: 0;
+}
+.listmenu h2 a {
+    font-size: 18px;
+    display: block;
+    font-weight: normal;
+    color: #FFF;
+    text-decoration: none;
+    margin: 0;
+    padding: 6px;
+   background: rgb(59,59,59);
+    background: rgba(0,0,0,.4);
+    position: relative;
+}
+.listmenu :not(:target) h2 a {
+   
+	background-color: rgb(59,59,59);
+    background-color: rgba(255,255,255,.3);
+	color:black;
+    position: relative;
+}
+.listmenu h2 a:hover,
+.listmenu h2 a:active,
+.listmenu h2 a:focus,
+.listmenu :target h2 a
+ {
+     background: rgb(59,59,59);
+    background: rgba(0,0,0,.4);
+	color:#FFF;
+}
+.listmenu :target p,
+.listmenu :not(:target) p {
+    padding: 0;
+    margin: 0;
+    height: 0;
+    overflow: hidden;
+    -moz-transition: height .2s ease;
+    -webkit-transition: height .2s ease;
+    -o-transition: height .2s ease;
+    transition: height .2s ease;
+}
+.listmenu :target p { 
+	height: 95px;
+	position:relative;
+}
+
+.listmenu p {
+	height: 95px 
+}

@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
 			$_SESSION["user_id"] = $user["id"];
 			$_SESSION["username"] = $user["name"];
 			$_SESSION["clearance"] = $user["clearance"];
-			redirect_to("listview.php");
+			redirect_to("index.php");
 		}else{
 			$_SESSION["message"] = "Username/password not found.";
 		}
