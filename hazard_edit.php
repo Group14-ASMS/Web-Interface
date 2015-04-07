@@ -9,6 +9,7 @@ $hazard_id = $_REQUEST['hazard_id'];
 
 if (empty($hazard_id)){
     exit('No hazard id passed');
+    header('Refresh: 5; URL=http://asms.elasticbeanstalk.com/index.php');
 //header: another page
 }
 
