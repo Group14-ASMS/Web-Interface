@@ -26,5 +26,3 @@ Replace the 'host' with the endpoint url on the AWS RDS instance.
 here's in depth tutorial:
 http://blog.benkuhl.com/2010/12/how-to-remotely-manage-an-amazon-rds-instance-with-phpmyadmin/ 
 
-Lynda Essential MySQL PHP Course: http://www.lynda.com/MySQL-tutorials/PHP-MySQL-Essential-Training/119003-2.html?srchtrk=index:1%0Alinktypeid:2%0Aq:skoglund%0Apage:1%0As:relevance%0Asa:true%0Aproducttypeid:2
-
