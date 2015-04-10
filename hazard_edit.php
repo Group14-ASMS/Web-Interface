@@ -1,4 +1,5 @@
 <?php require_once("./includes/db_connection.php");
+require_once("./includes/functions.php");
 require_once 'vendor/autoload.php';
 use Symfony\Component\HttpFoundation\Session\Session;
 
@@ -8,7 +9,7 @@ use Symfony\Component\HttpFoundation\Session\Session;
 $hazard_id = $_REQUEST['hazard_id'];
 
 if (empty($hazard_id)){
-	header('Refresh: 5; URL='http://asms.elasticbeanstalk.com/index.php');
+	header('Refresh: 5; URL=http://asms.elasticbeanstalk.com/index.php');
     exit('No hazard id passed');
     
 //header: another page
