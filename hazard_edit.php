@@ -8,8 +8,9 @@ use Symfony\Component\HttpFoundation\Session\Session;
 $hazard_id = $_REQUEST['hazard_id'];
 
 if (empty($hazard_id)){
+	header('Refresh: 5; URL='http://asms.elasticbeanstalk.com/index.php');
     exit('No hazard id passed');
-    header('Refresh: 5; URL=http://asms.elasticbeanstalk.com/index.php');
+    
 //header: another page
 }
 

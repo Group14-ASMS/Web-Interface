@@ -1,4 +1,4 @@
-    <div id="footer">Copyright <?php echo date("Y"); ?>, Ian Later</div>
+    <div id="footer">&copy <?php echo date("Y"); ?>, Ian Later</div>
 
 	</body>
 </html>
