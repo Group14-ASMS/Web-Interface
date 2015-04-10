@@ -1,4 +1,6 @@
 <?php require_once("./includes/db_connection.php");
+require_once("./includes/functions.php");
+
 require_once 'vendor/autoload.php';
 use Symfony\Component\HttpFoundation\Session\Session;
 
@@ -110,7 +112,7 @@ if (isset($_POST['submit'])){
     <h1> Hazard details </h1>
         <div style="color: green">
                 <?php
-                    foreach ($session->getFlashBag()->get('modification-success') as $message) {
+                   foreach ($session->getFlashBag()->get('modification-success') as $message) {
                         echo $message. "<br/>";
                     }
                 ?>
