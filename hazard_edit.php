@@ -4,7 +4,6 @@ require_once("./includes/functions.php");
 require_once 'vendor/autoload.php';
 use Symfony\Component\HttpFoundation\Session\Session;
 
-
 	$style=array('listview');
 
 $hazard_id = $_REQUEST['hazard_id'];
@@ -79,7 +78,12 @@ if (isset($_POST['submit'])){
         $message = "Location must be a numeric value!";
         $session->getFlashBag()->add('modification-success', $message);
     }
-    else if (empty($_POST['category']) || empty($_POST['location_x']) || empty($_POST['location_x']) || empty($_POST['information'])){
+    else if (!is_numeric($_POST['priority'])){
+        $message = "Priority must be a numeric value";
+        $session->getFlashBag()->add('modification-success', $message);
+
+    }
+    else if (empty($_POST['category']) || empty($_POST['location_x']) || empty($_POST['location_x']) || empty($_POST['information']) || empty($_POST['priority'])){
         $message = "Fields cannot be empty!";
         $session->getFlashBag()->add('modification-success', $message);
     }
