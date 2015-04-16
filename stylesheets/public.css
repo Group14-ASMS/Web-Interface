@@ -126,27 +126,17 @@ div.message {
 
 
 #map-canvas{
-    width:300px;
+    width:250px;
     height:200px;
     float:right;
     border: 1px solid black;
 }
 
 img{
-    width: 480px;
-    height: 350px;
+    width: 300px;
+    height: 200px;
     border: 1px solid black;
-    float: left;
 }
-#form{
-    float: left;
-    margin-top: 10px;
-}
-#submit{
-    float: right;
-    margin: 10px;
-    width: 150px;
-    height: 90px;
-}
+
 
 

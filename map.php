@@ -6,6 +6,7 @@
 
 <?php
 //store all the data from hazards into array $h_list
+confirm_logged_in();
 $sql = "SELECT * FROM hazards ORDER BY id";
 $results = mysqli_query($connection,$sql);
 
@@ -17,10 +18,10 @@ $hInfo_list = array();
 
 while ($current_row = mysqli_fetch_assoc($results)) {
     $hID_list[] = $current_row['id'];              //index 0, id
-    $hTime_list[] = $current_row['time'];            //index 1, time
-    $hX_list[] = $current_row['x'];                  //index 2, x
-    $hY_list[] = $current_row['y'];                  //index 3, y
-    $hInfo_list[] = $current_row['info'];            //index 4, info
+    $hTime_list[] = $current_row['time'];          //index 1, time
+    $hX_list[] = $current_row['x'];                //index 2, x
+    $hY_list[] = $current_row['y'];                //index 3, y
+    $hInfo_list[] = $current_row['info'];          //index 4, info
 }
 
 $h_list = array($hID_list,$hTime_list,$hX_list,$hY_list,$hInfo_list);

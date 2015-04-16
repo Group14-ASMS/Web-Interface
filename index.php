@@ -53,6 +53,7 @@
 		<h1>Hazards</h1>
 	<?php 
 		$display_limit=10;
+		confirm_logged_in();
 		$query="SELECT * FROM hazards ORDER BY {$sort_by} {$order}";
 			if($sort_by!="time")
 				$query.=", time DESC";
@@ -62,7 +63,7 @@
 			$namequery="SELECT username FROM users WHERE id={$row["author_id"]}";
 			$name=mysqli_fetch_assoc(mysqli_query($connection,$namequery));
 			echo "<li id=\"{$row["id"]}\"> 
-					<h2  ><a href=\"#{$row["id"]}\">{$row["info"]} </a></h2>";
+					<h2  ><a href=\"#{$row["id"]}\">{$row["title"]} </a></h2>";
 				echo "<p>";
 					echo "<a href=\"./hazard_edit.php?hazard_id={$row["id"]}\">view</a><br>";
 					echo "Description:{$row["info"]}<br>";

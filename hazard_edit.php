@@ -108,7 +108,7 @@ if (isset($_POST['submit'])){
     }
 }
 
-?>
+confirm_admin()?>
     <h1> Hazard details </h1>
         <div style="color: green">
                 <?php

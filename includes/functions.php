@@ -71,7 +71,7 @@
 		
 		$query  = "SELECT * ";
 		$query .= "FROM users ";
-		$query .= "WHERE (privilege MOD 4)=0 ";
+		$query .= "WHERE (clearance MOD 4)=0 ";
 		$query .= "ORDER BY username ASC";
 		$admin_set = mysqli_query($connection, $query);
 		confirm_query($admin_set);
@@ -335,20 +335,11 @@
 		}
 		if(!is_admin()){
 			$_SESSION["message"]= "Sorry, you do not have access to that page.";
-			redirect_to("home.php");
-		}
-	}
-	function confirm_creator() {
-		if (!logged_in()) {
-			redirect_to("login.php");
-		}
-		if(!is_creator()){
-			$_SESSION["message"]= "Sorry, you do not have access to that page.";
-			redirect_to("home.php");
+			redirect_to("index.php");
 		}
 	}
 	function is_admin(){
-		if (isset($_SESSION['privilege']) && $_SESSION['privilege']>=0)
+		if (isset($_SESSION['clearance']) && $_SESSION['clearance']>=0)
 			return true;
 		else	
 			return false;
