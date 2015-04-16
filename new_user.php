@@ -34,7 +34,7 @@ if(isset($_POST["submit"])){
 		if ($result) {
 		  // Success
 		  $_SESSION["message"] = "User created.";
-		  redirect_to("main.php");
+		  redirect_to("index.php");
 		} 
 		else {
 		  // Failure
