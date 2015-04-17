@@ -19,7 +19,6 @@
 </head>
 <body>
     <div id="header">
-      <img float="left" src="http://asms-image-storage.s3.amazonaws.com/logos/logoFAA.png" height="84" width="84"/>
       <h1>Aviation Safety Management Monitor </h1>
       <?php if (is_admin()) { echo ": Admin"; } ?>
 	  
