@@ -29,7 +29,6 @@
 <div class="outercontainer">
     <?php echo message(); ?>
     <?php echo form_errors($errors); ?>
-    
 	
 	<form method="post" action="" style="float:left">
 		<label>Sort By:</label>
@@ -78,10 +77,6 @@
 		}
 	?>
 	</ul>
-	<div class="photo">
-		<img src="http://elasticbeanstalk-us-west-2-399852120613.s3.amazonaws.com/images/hazards/testimage123.jpg" />
-	</div>
-	
-	
+
 </div><!-- close container-->
 <?php include("./includes/layouts/footer.php"); ?>
