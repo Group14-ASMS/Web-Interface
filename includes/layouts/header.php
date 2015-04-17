@@ -5,7 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Aviation Safety Management Monitor</title>
-	<link href="stylesheets/public.css" media="all" rel="stylesheet" type="text/css" />
+	<!--<link href="stylesheets/public.css" media="all" rel="stylesheet" type="text/css" />-->
 	<link href="stylesheets/faastyles.css" media="all" rel="stylesheet" type="text/css" />
 
 	<?php 
@@ -33,7 +33,14 @@
 						</li>
 
 						<li role="presentation">
-							<a href="http://usc.edu" role="menuitem" class="here"><strong>USC Home</strong></a>
+							<a href="http://usc.edu" >
+								<strong>
+									<?php
+	  									if(logged_in())	echo " <a href=\"./logout.php\" role=\"menuitem\" class=\"here\">Log Out</a>&nbsp";
+	  									else echo " <a href=\"./login.php\">Log In</a>&nbsp";
+	  								?>
+								</strong>
+							</a>
 						</li>
 					
 			</ul>
@@ -41,21 +48,12 @@
 
 		
 		<div id="hNav" class="hNav" role="navigation">
-
 			<ul role="menubar">
 				
-						<li role="presentation" aria-haspopup="true"><a href="/aircraft/" role="menuitem">Hazard List</a></li>
-						<li role="presentation" aria-haspopup="true"><a href="/airports/" role="menuitem">Hazard Map</a></li>
+						<li role="presentation" aria-haspopup="true"><a href="index.php" role="menuitem">Hazard List</a></li>
+						<li role="presentation" aria-haspopup="true"><a href="map.php" role="menuitem">Hazard Map</a></li>
 					
 			</ul>
 		</div>
-      	<?php if (is_admin()) { echo ": Admin"; } ?>
-	  
-	  	<?php 
-	  		echo "<a href=\"./index.php\">main</a>&nbsp";
-	  		echo " <a href=\"./map.php\">map</a>&nbsp";
-	  		if(logged_in())	echo " <a href=\"./logout.php\">logout</a>&nbsp";
-	  		else echo " <a href=\"./login.php\">login</a>&nbsp";
-	  	?>
     </div>
 
