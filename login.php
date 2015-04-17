@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
 		</form>
 	
 	<div class="photo">
-		<img src="http://elasticbeanstalk-us-west-2-399852120613.s3.amazonaws.com/images/hazards/testimage123.jpg" />
+		<img src="http://asms-image-storage.s3.amazonaws.com/hazards/testimage123.jpg" />
 	</div>
 	
 </div><!-- close container-->
