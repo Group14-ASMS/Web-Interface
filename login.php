@@ -43,10 +43,6 @@ if (isset($_POST['submit'])) {
 			<input type="submit" value="Enter" name="submit">
 		</form>
 	
-	<div class="photo">
-		<img src="http://asms-image-storage.s3.amazonaws.com/hazards/testimage123.jpg" />
-	</div>
-	
 </div><!-- close container-->
 
 <?php include("./includes/layouts/footer.php"); ?>
