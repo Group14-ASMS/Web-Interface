@@ -78,6 +78,9 @@
 		}
 	?>
 	</ul>
+	<div class="photo">
+		<img src="http://elasticbeanstalk-us-west-2-399852120613.s3.amazonaws.com/images/hazards/testimage123.jpg" />
+	</div>
 	
 	
 </div><!-- close container-->
