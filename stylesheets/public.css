@@ -6,6 +6,7 @@
   #8D0D19 - burgundy
 */
 
+/*
 html { height: 100%; width: 100%; }
 body {
   width: 100%; height: 100%; 
@@ -14,6 +15,7 @@ body {
   font-size: 13px; line-height: 15px;
   background: #EEE4B9;
 }
+*/
 img { border: none; }
 a { color: #162492 }
 a:hover { color: #8D0D19; }
@@ -24,6 +26,7 @@ a:hover { color: #8D0D19; }
 	width:800px;
 }
 
+/*
 #header { 
 	height: 70px; 
 	margin: 0; padding: 5px; text-align: left;
@@ -33,11 +36,13 @@ a:hover { color: #8D0D19; }
 }
 #header h1 {  }
 #header a{color:#FFFFFF;}
+*/
 #main { 
 	height: 600px; width: 100%; 
 	margin: 0; padding: 0; 
 	background: #EEE4B9;
 }
+
 #footer { 
 	clear: both;
 	height: 2em; margin: 0; padding: 1em; 
@@ -46,6 +51,7 @@ a:hover { color: #8D0D19; }
 }
 
 /* Navigation */
+/*
 #navigation { 
 	float: left;
 	width: 150px; height: 100%; 
@@ -59,6 +65,7 @@ ul.subjects {
 }
 ul.pages { padding-left: 2em; list-style: square; font-weight: normal; }
 .selected { font-weight: bold; }
+*/
 
 /* Page Content */
 #page { 
@@ -108,11 +115,13 @@ div.message {
 .tags a{ text-decoration:none;}
 .tags a:hover{ text-decoration:underline overline;}
 
+/*
 .left {
     float: left;
     width: 100px;
     font-weight: bold;
 }
+*/
 .right {
     margin-left:200px;
 
