@@ -5,7 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Aviation Safety Management Monitor</title>
-	<!--<link href="stylesheets/public.css" media="all" rel="stylesheet" type="text/css" />-->
+	<link href="stylesheets/public.css" media="all" rel="stylesheet" type="text/css" />
 	<link href="stylesheets/faastyles.css" media="all" rel="stylesheet" type="text/css" />
 
 	<?php 
@@ -37,7 +37,7 @@
 								<strong>
 									<?php
 	  									if(logged_in())	echo " <a href=\"./logout.php\" role=\"menuitem\" class=\"here\">Log Out</a>&nbsp";
-	  									else echo " <a href=\"./login.php\">Log In</a>&nbsp";
+	  									else echo " <a href=\"./login.php\" role=\"menuitem\" class=\"here\">Log In</a>&nbsp";
 	  								?>
 								</strong>
 							</a>
