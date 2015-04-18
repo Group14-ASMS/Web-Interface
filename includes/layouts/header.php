@@ -23,7 +23,7 @@
 		<div class="templateContainer clear">
 			<a class="siteLogo" href="index.php">
 			  <img alt="FAA seal" class="left" src="http://asms-image-storage.s3.amazonaws.com/logos/logoFAA.png" height="84" width="84">
-			  <span>Aviation Safety Hazard Monitor <?php if (is_admin()) { echo ": Admin"; } ?></span>
+			  <span>Aviation Safety Hazard Monitor</span>
 			</a>
 	
 			<ul class="topNav" role="menubar">
