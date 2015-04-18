@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ASMS</title>
+<title>Hazard Monitor</title>
 <link href="stylesheets/public.css" media="all" rel="stylesheet" type="text/css" />
 
 	<?php 
