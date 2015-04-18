@@ -3,7 +3,7 @@
 <?php require_once("./includes/functions.php"); ?>
 <?php require_once("./includes/validation_functions.php"); ?>
 <?php 
-	$style=array('listview');
+	$style=array('public','listview');
 	$sort_by="priority";
 	$order="DESC";
 	if(isset($_POST["sort_by"])){
@@ -62,10 +62,16 @@
 		while($row=mysqli_fetch_assoc($post)){
 			$namequery="SELECT username FROM users WHERE id={$row["author_id"]}";
 			$name=mysqli_fetch_assoc(mysqli_query($connection,$namequery));
-			echo "<li id=\"{$row["id"]}\"> 
-					<h2  ><a href=\"#{$row["id"]}\">{$row["title"]} </a></h2>";
+			echo "<li id=\"{$row["id"]}\" class=\"";
+						if($row["priority"]==3)
+							echo "red\">";
+						else if($row["priority"]==2)
+							echo "blue\">";
+						else
+							echo "green\">";
+				echo"<h2  ><a href=\"#{$row["id"]}\">{$row["title"]} </a></h2>";
 				echo "<p>";
-					echo "<a href=\"./hazard_edit.php?hazard_id={$row["id"]}\">view</a><br>";
+					echo "<a href=\"./hazard_edit.php?hazard_id={$row["id"]}\"><button>view</button></a><br>";
 					echo "Description:{$row["info"]}<br>";
 					echo "Location:{$row["x"]}\",{$row["y"]}\"<br>";
 					echo "Time of submission:{$row["time"]}<br>";						

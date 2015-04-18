@@ -81,3 +81,24 @@
 .listmenu p {
 	height: 95px 
 }
+
+li.red{
+	background-color:#FF0000;
+}
+.red p{
+	background-color: #FFCCCC;
+}
+li.blue{
+	background-color:blue;
+}
+.blue p{
+	background-color:#CCCCFF;
+}
+li.green{
+	background-color:green;
+}
+.green p{
+	background-color:#CCEBCC;
+}
+
+

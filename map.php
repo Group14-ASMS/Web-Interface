@@ -6,7 +6,6 @@
 
 <?php
 //store all the data from hazards into array $h_list
-confirm_logged_in();
 $sql = "SELECT * FROM hazards ORDER BY id";
 $results = mysqli_query($connection,$sql);
 
@@ -15,16 +14,20 @@ $hTime_list = array();
 $hX_list = array();
 $hY_list = array();
 $hInfo_list = array();
+$hPriority_list = array();
+$hTitle_list = array();
 
 while ($current_row = mysqli_fetch_assoc($results)) {
     $hID_list[] = $current_row['id'];              //index 0, id
-    $hTime_list[] = $current_row['time'];          //index 1, time
-    $hX_list[] = $current_row['x'];                //index 2, x
-    $hY_list[] = $current_row['y'];                //index 3, y
-    $hInfo_list[] = $current_row['info'];          //index 4, info
+    $hTime_list[] = $current_row['time'];            //index 1, time
+    $hX_list[] = $current_row['x'];                  //index 2, x
+    $hY_list[] = $current_row['y'];                  //index 3, y
+    $hInfo_list[] = $current_row['info'];            //index 4, info
+    $hPriority_list[] = $current_row['priority'];    //index 5, priority
+    $hTitle_list[] = $current_row['title'];          //index 6, title
 }
 
-$h_list = array($hID_list,$hTime_list,$hX_list,$hY_list,$hInfo_list);
+$h_list = array($hID_list,$hTime_list,$hX_list,$hY_list,$hInfo_list,$hPriority_list,$hTitle_list);
 
 //echo "debug use ## array info is: <br />" . $h_list[3][0];
 ?>
@@ -47,12 +50,6 @@ $h_list = array($hID_list,$hTime_list,$hX_list,$hY_list,$hInfo_list);
         //Read data from $h_list
         var hList = <?php echo json_encode($h_list);?>;
 
-        //console.log(hList[2][0]);
-        //console.log(hList[3][0]);
-        //console.log(hList[2][1]);
-        console.log(hList[3][1]);
-        //console.log(hList[0].length);
-
         function initialize() {
             var mapOptions = {
                 center: {lat: 33.941, lng: -118.408},
@@ -65,24 +62,22 @@ $h_list = array($hID_list,$hTime_list,$hX_list,$hY_list,$hInfo_list);
             var infowindow = new google.maps.InfoWindow();
 
             for (i = 0; i < hList[0].length;i++) {
-                /*var contentString = '<div id ="content">'+
-                    '<p><b>ID:</b> ' + hList[0][i] + '</p></div>';*/
-
-                //infoArray.push(contentString);
-
-               /* var infowindow = new google.maps.InfoWindow({
-                    content: contentString
-                });*/
+                 var pinImage;
+                // priority color from red to blue to green
+                 if (hList[5][i] == 3) {
+                     pinImage = new google.maps.MarkerImage("http://maps.google.com/mapfiles/ms/icons/red-dot.png");
+                 } else if (hList[5][i] == 2) {
+                     pinImage = new google.maps.MarkerImage("http://maps.google.com/mapfiles/ms/icons/blue-dot.png");
+                 } else {
+                     pinImage = new google.maps.MarkerImage("http://maps.google.com/mapfiles/ms/icons/green-dot.png");
+                 }
 
                 marker = new google.maps.Marker({
-                   position: new google.maps.LatLng(hList[2][i],hList[3][i]),
+                    icon: pinImage,
+                    position: new google.maps.LatLng(hList[2][i],hList[3][i]),
                     map: map,
-                    title: hList[0][i]
+                    title: hList[6][i]
                 });
-
-                /*google.maps.event.addListener(marker, 'click', function() {
-                    infowindow.open(map,this);
-                });*/
 
                 google.maps.event.addListener(marker, 'click', (function(marker, i) {
                     return function() {
@@ -92,6 +87,7 @@ $h_list = array($hID_list,$hTime_list,$hX_list,$hY_list,$hInfo_list);
                         funcString += ")";
                         console.log(funcString);
                         var contentString = '<div id ="content">'+
+                            '<h1>' + hList[6][i] + '</h1>' +
                             '<p><b>Hazard ID: </b> ' + hList[0][i] + '</p>'+
                         '<p><b>TIME: </b> ' + hList[1][i] + '</p>' +
                         '<p><b>COORDINATE: </b> ' + hList[2][i] + ' , ' + hList[3][i] + '</p>' +
