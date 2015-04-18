@@ -30,6 +30,7 @@ while ($current_row = mysqli_fetch_assoc($results)) {
 $h_list = array($hID_list,$hTime_list,$hX_list,$hY_list,$hInfo_list,$hPriority_list,$hTitle_list);
 
 //echo "debug use ## array info is: <br />" . $h_list[3][0];
+confirm_logged_in();
 ?>
 
 <?php include("./includes/layouts/header.php"); ?>
