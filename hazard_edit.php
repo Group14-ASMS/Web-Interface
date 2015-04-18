@@ -51,7 +51,7 @@ if(!$results_categories){
         function initialize() {
             var myLatlng = new google.maps.LatLng(<?php echo $hazard_record['x']?>,<?php echo $hazard_record['y']?>);
             var mapOptions = {
-                zoom: 12,
+                zoom: 14,
                 center: myLatlng
             }
             var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -117,26 +117,23 @@ confirm_admin()?>
                     }
                 ?>
         </div>
-        <div id="image_container">
-            <img src="<?php echo $hazard_record['photo_id']?>">
+        <div id="image_container" style="float:left;">
+            <img src="http://asms-image-storage.s3.amazonaws.com/hazards/<?php echo $hazard_record['photo_id']?>">
         </div>
-        <div id="map-canvas" ></div>
+        <div id="map-canvas"style="float:right;width:400px;height:300px;" ></div>	
+		<br style="clear:both"><hr>
         <div id="form">
             <form name="form" method="post" action="hazard_edit.php?hazard_id=<?php echo $hazard_id?>" class="form" id="hazard_form">
                 <?php if ($hazard_record['anonymous'] != 1){?>
-                    <div class="left">  Author ID: </div>
-                    <div class="right"> <?php echo $hazard_record['author_id']?></div>
-                    <div class="left">  Author name: </div>
-                    <div class="right"> <?php echo $hazard_record['username']?></div>
+                    <div>  Author ID: <?php echo $hazard_record['author_id']?></div>
+                    <div>  Author name: <?php echo $hazard_record['username']?></div>
                 <?php }?>
 
-                <div class="left">  Date: </div>
-                <div class="right">  <?php echo $hazard_record['time']?> </div>
-                <div class="left">  Priority: </div>
-                <div class="right">  <input type="text"  name = "priority" value="<?php echo $hazard_record['priority']?>" > </div>
+                <strong>  Date: <?php echo $hazard_record['time']?> <br>
+                
+                <label>  Priority: </label><input type="text"  name = "priority" value="<?php echo $hazard_record['priority']?>" > 
 
-                <div class="left"> Category: </div>
-                <div class="right">
+                <label> Category: </label>
                     <select name="category">
                         <?php
                         while($categories = mysqli_fetch_array($results_categories)) {
@@ -149,18 +146,16 @@ confirm_admin()?>
                         }
                         ?>
                     </select>
-                </div>
-                <div class="left"> Location X: </div>
-                <div class="right"> <input type="text" name="location_x" value="<?php echo $hazard_record['x']?>" ></div>
-                <div class="left"> Location Y: </div>
-                <div class="right">  <input type="text" name="location_y" value="<?php echo $hazard_record['y']?>" ></div>
+					<br>
+				<div style"float:left">
+					<label> Location X: </label> <input type="text" name="location_x" value="<?php echo $hazard_record['x']?>" ><br>
+					<label> Location Y: </label> <input type="text" name="location_y" value="<?php echo $hazard_record['y']?>" >
+				</div>
 
+                <label>Information:  </label></strong><br><textarea name = 'information' rows="10" cols="40"> <?php echo strip_tags($hazard_record['info'])?></textarea>
 
-                <div class="left">Information:  </div>
-                <div class="right"><textarea name = 'information' rows="10" cols="40"> <?php echo strip_tags($hazard_record['info'])?></textarea>
-                </div>
-
-                <input type="submit" name="submit" id="submit">
+				<br>
+                <input type="submit" name="submit" value="Submit Changes" id="submit">
             </form>
         </div>
 
