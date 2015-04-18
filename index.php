@@ -29,7 +29,6 @@
 <div class="outercontainer">
     <?php echo message(); ?>
     <?php echo form_errors($errors); ?>
-    
 	
 	<form method="post" action="" style="float:left">
 		<label>Sort By:</label>
@@ -84,7 +83,6 @@
 		}
 	?>
 	</ul>
-	
-	
+
 </div><!-- close container-->
 <?php include("./includes/layouts/footer.php"); ?>
