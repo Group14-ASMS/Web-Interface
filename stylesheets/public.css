@@ -108,11 +108,6 @@ div.message {
 .tags a{ text-decoration:none;}
 .tags a:hover{ text-decoration:underline overline;}
 
-.left {
-    float: left;
-    width: 100px;
-    font-weight: bold;
-}
 .right {
     margin-left:200px;
 
