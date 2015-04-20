@@ -35,36 +35,6 @@
 		return $output;
 	}
 	
-	function find_all_subjects($public=true) {
-		global $connection;
-		
-		$query  = "SELECT * ";
-		$query .= "FROM subjects ";
-		if ($public) {
-			$query .= "WHERE visible = 1 ";
-		}
-		$query .= "ORDER BY position ASC";
-		$subject_set = mysqli_query($connection, $query);
-		confirm_query($subject_set);
-		return $subject_set;
-	}
-	
-	function find_pages_for_subject($subject_id, $public=true) {
-		global $connection;
-		
-		$safe_subject_id = mysqli_real_escape_string($connection, $subject_id);
-		
-		$query  = "SELECT * ";
-		$query .= "FROM pages ";
-		$query .= "WHERE subject_id = {$safe_subject_id} ";
-		if ($public) {
-			$query .= "AND visible = 1 ";
-		}
-		$query .= "ORDER BY position ASC";
-		$page_set = mysqli_query($connection, $query);
-		confirm_query($page_set);
-		return $page_set;
-	}
 	
 	function find_all_admins() {
 		global $connection;
