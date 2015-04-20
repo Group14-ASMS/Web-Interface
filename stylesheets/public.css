@@ -110,9 +110,10 @@ div.message {
 
 .left {
     float: left;
-    width: 100px;
+    width: 84px;
     font-weight: bold;
 }
+
 .right {
     margin-left:200px;
 

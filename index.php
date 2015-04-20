@@ -34,7 +34,6 @@
 	<form method="post" action="" style="float:left">
 		<label>Sort By:</label>
 		<select name="sort_by" onchange="this.form.submit()">
-			<option value=<?php echo $sort_by;?>><?php echo $sort_by;?></option>
 			<option value="priority">Priority</option>
 			<option value="time">Time</option>
 		</select>
@@ -42,7 +41,6 @@
 	</form>	
 	<form method="post" action="" style="float:left">
 		<select name="order" onchange="this.form.submit()">
-			<option value=<?php echo $order;?>><?php echo $order;?></option>
 			<option value="DESC">Descending</option>
 			<option value="ASC">Ascending</option>
 		</select>
