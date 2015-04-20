@@ -1,4 +1,3 @@
-<?php require_once("./includes/session.php"); ?>
 <?php require_once("./includes/db_connection.php");
 require_once("./includes/functions.php");
 
@@ -71,7 +70,7 @@ if(!$results_categories){
 
 if (isset($_POST['submit'])){
 
-    $inf = mysql_real_escape_string(str_replace("'", "`", $_POST['information']);
+    $inf = mysql_real_escape_string(str_replace("'", "`", $_POST['information']));
     if (empty($_POST['category']) || empty($_POST['location_x']) || empty($_POST['location_x']) || empty($_POST['information']) || empty($_POST['priority'])){
         $message = "Fields cannot be empty!";
         $session->getFlashBag()->add('modification-success', $message);
