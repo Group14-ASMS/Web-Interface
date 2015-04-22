@@ -52,14 +52,16 @@ if(isset($_POST["submit"])){
     <?php echo message(); ?>
     <?php echo form_errors($errors); ?>
     
-    <h2>Create User</h2>
-		<form method="post" action="" name="userEntry">
-		
-			<label> username: </label><input type="text" name="username" value="<?php echo $username;?>"> <br/>
-			<label> password: </label><input type="password" name="password"> <br/>
-			<label> confirm password: </label><input type="password" name="confirmPassword"> 
-			<input type="submit" value="Go" name="submit">
-		</form>
+    <form method="post" action="" name="userEntry" class="pure-form pure-form-stacked">
+    <fieldset>
+        <legend>Enter User Information</legend>
+
+        <input id="email" type="text" name="username" value="<?php echo $username;?>" placeholder="Username">
+        <input id="password" type="password" name="password" placeholder="Password">
+        <input type="password" name="confirmPassword" placeholder="Confirm Password">
+        <button type="submit" name="submit" class="pure-button pure-button-primary">Create User</button>
+    </fieldset>
+	</form>
 		
 </div><!-- close container-->
 

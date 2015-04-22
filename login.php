@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
     
     <form method="post" action="" name="userEntry" class="pure-form pure-form-stacked">
     <fieldset>
-        <legend>Enter Administration Credentials</legend>
+        <legend>Enter Administrator Credentials</legend>
 
         <input id="email" type="text" name="username" value="<?php echo $username;?>" placeholder="Username">
         <input id="password" type="password" name="password" placeholder="Password">
