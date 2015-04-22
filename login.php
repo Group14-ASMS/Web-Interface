@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
 
         <input id="email" type="text" name="username" value="<?php echo $username;?>" placeholder="Username">
         <input id="password" type="password" name="password" placeholder="Password">
-        <label for="new_user"><a href"new_user.php"><small>Register new account</small></a></label>
+        <label for="new_user"><a href="new_user.php"><small>Register new account</small></a></label>
 
         <button type="submit" value="Enter" class="pure-button pure-button-primary">Sign in</button>
     </fieldset>
