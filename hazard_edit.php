@@ -70,7 +70,7 @@ if(!$results_categories){
 
 if (isset($_POST['submit'])){
 
-    $inf = str_replace("'", "`", $_POST['information']);
+    $inf = mysql_real_escape_string(str_replace("'", "`", $_POST['information']));
     if (empty($_POST['category']) || empty($_POST['location_x']) || empty($_POST['location_x']) || empty($_POST['information']) || empty($_POST['priority'])){
         $message = "Fields cannot be empty!";
         $session->getFlashBag()->add('modification-success', $message);
@@ -83,7 +83,7 @@ if (isset($_POST['submit'])){
         $message = "Priority must be a numeric value";
         $session->getFlashBag()->add('modification-success', $message);
     }
-    else {
+    else {		
         $update_sql = "UPDATE hazards
                 SET
                 cat = " . $_POST['category'] . ",
