@@ -35,14 +35,18 @@ if (isset($_POST['submit'])) {
     <?php echo message(); ?>
     <?php echo form_errors($errors); ?>
     
-    <h2>Login</h2>  <h3><a href="new_user.php">create user</a></h3>
-		<form method="post" action="" name="userEntry">
-		
-			<label> email: </label><input type="text" name="username" value="<?php echo $username;?>">
-			<label> password: </label><input type="password" name="password">
-			<input type="submit" value="Enter" name="submit">
-		</form>
-	
+    <form class="pure-form pure-form-stacked">
+    <fieldset>
+        <legend>Please Log In</legend>
+
+        <input id="email" type="text" name="username" value="<?php echo $username;?>" placeholder="Username">
+        <input id="password" type="password" name="password" placeholder="Password">
+        <label for="new_user"><a href"new_user.php"><small>Register new account</small></a></label>
+
+        <button type="submit" value="Enter" class="pure-button pure-button-primary">Sign in</button>
+    </fieldset>
+	</form>
+
 </div><!-- close container-->
 
 <?php include("./includes/layouts/footer.php"); ?>
