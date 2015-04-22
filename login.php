@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
     <?php echo message(); ?>
     <?php echo form_errors($errors); ?>
     
-    <form class="pure-form pure-form-stacked">
+    <form method="post" action name="userEntry" class="pure-form pure-form-stacked">
     <fieldset>
         <legend>Please Log In</legend>
 
