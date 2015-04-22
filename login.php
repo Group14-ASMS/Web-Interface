@@ -35,15 +35,14 @@ if (isset($_POST['submit'])) {
     <?php echo message(); ?>
     <?php echo form_errors($errors); ?>
     
-    <form method="post" action name="userEntry" class="pure-form pure-form-stacked">
+    <form method="post" action="" name="userEntry" class="pure-form pure-form-stacked">
     <fieldset>
         <legend>Please Log In</legend>
 
         <input id="email" type="text" name="username" value="<?php echo $username;?>" placeholder="Username">
         <input id="password" type="password" name="password" placeholder="Password">
-        <label for="new_user"><a href="new_user.php"><small>Register new account</small></a></label>
-
-        <button type="submit" value="Enter" class="pure-button pure-button-primary">Sign in</button>
+        <label for="new_user"><a href="new_user.php"><small>Register new account</small></a></label>i
+        <button type="submit" value="Enter" name="submit" class="pure-button pure-button-primary">Log n</button>
     </fieldset>
 	</form>
 
