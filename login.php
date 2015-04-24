@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
 
     <?php echo message(); ?>
     <?php echo form_errors($errors); ?>
-    
+
     
 		<form method="post" action="" name="userEntry" class="basic-grey">
 		<h1 >Enter Administrator Credentials</h1>  
