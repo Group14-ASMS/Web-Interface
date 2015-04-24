@@ -9,16 +9,21 @@ if(isset($_POST["submit"])){
 	$username=$_POST["username"];
 	$password=$_POST["password"];
 	$confirmPassword=$_POST["confirmPassword"];
-	  // validations
-	  $required_fields = array("username", "password","confirmPassword");
-	  validate_presences($required_fields);
-	  $fields_with_max_lengths = array("username" => 30 , "password" => 50);
-	  validate_max_lengths($fields_with_max_lengths);
-	  if(!($confirmPassword===$password))
+	// validations
+	$required_fields = array("username", "password","confirmPassword");
+	validate_presences($required_fields);
+	$fields_with_max_lengths = array("username" => 30 , "password" => 50);
+	validate_max_lengths($fields_with_max_lengths);
+	if(!($confirmPassword===$password))
 		$errors["password"]= "passwords don't match";
-  
 	
-	$username=$_POST["username"];
+	$query  = "SELECT `id` FROM `users` WHERE `username` = \"{$username}\"";
+	$result = mysqli_query($connection, $query);
+	$id=mysqli_fetch_assoc($result)["id"];
+	if ($id) {
+		$errors["username"]="Username is taken";
+	}
+ 	
 	if(empty($errors)){
 		$password=$_POST["password"];
 		$username = mysql_prep($_POST["username"]);
