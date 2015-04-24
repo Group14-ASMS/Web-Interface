@@ -117,16 +117,13 @@ confirm_admin()?>
                     }
                 ?>
         </div>
-        <div id="image_container" style="float:left;">
-            <img src="http://asms-image-storage.s3.amazonaws.com/hazards/<?php echo $hazard_record['photo_id']?>">
-        </div>
-        <div id="map-canvas"style="float:right;width:400px;height:300px;" ></div>	
-		<br style="clear:both"><hr>
-        <div id="form">
-            <form name="form" method="post" action="hazard_edit.php?hazard_id=<?php echo $hazard_id?>" class="form" id="hazard_form">
+        
+        <div id="map-canvas"style="float:left;width:400px;height:300px;" ></div>	
+        
+            <form name="form" method="post" action="hazard_edit.php?hazard_id=<?php echo $hazard_id?>" class="basic-grey" id="hazard_form" style="float:right;">
                 <?php if ($hazard_record['anonymous'] != 1){?>
-                    <div>  Author ID: <?php echo $hazard_record['author_id']?></div>
-                    <div>  Author name: <?php echo $hazard_record['username']?></div>
+                    <label>  Author ID: <?php echo $hazard_record['author_id']?></label>
+                    <label>  Author Name: <?php echo $hazard_record['username']?></label>
                 <?php }?>
 
                 <strong>  Date: <?php echo $hazard_record['time']?> <br>
@@ -155,8 +152,11 @@ confirm_admin()?>
                 <label>Information:  </label></strong><br><textarea name = 'information' rows="10" cols="40"> <?php echo strip_tags($hazard_record['info'])?></textarea>
 
 				<br>
-                <input type="submit" name="submit" value="Submit Changes" id="submit">
+                <input type="submit" name="submit" value="Submit Changes" id="submit" class="button">
             </form>
+        
+		<div id="image_container" style="float:left;">
+            <img style="width:402px;"src="http://asms-image-storage.s3.amazonaws.com/hazards/<?php echo $hazard_record['photo_id']?>">
         </div>
 
 </div>

@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Hazard Monitor</title>
 <link href="stylesheets/public.css" media="all" rel="stylesheet" type="text/css" />
+<link href="stylesheets/forms.css" media="all" rel="stylesheet" type="text/css" />
 
 	<?php 
 		if(isset($style)){

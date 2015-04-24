@@ -48,19 +48,17 @@ if(isset($_POST["submit"])){
 
 <?php include("./includes/layouts/header.php"); ?>
 
-<div class="container">
     <?php echo message(); ?>
     <?php echo form_errors($errors); ?>
     
-    <h2>Create User</h2>
-		<form method="post" action="" name="userEntry">
-		
-			<label> username: </label><input type="text" name="username" value="<?php echo $username;?>"> <br/>
-			<label> password: </label><input type="password" name="password"> <br/>
-			<label> confirm password: </label><input type="password" name="confirmPassword"> 
-			<input type="submit" value="Go" name="submit">
+    
+		<form method="post" action="" name="userEntry" class="basic-grey">
+		<h1>Create User</h1>
+			<label> Username: <input type="text" name="username" value="<?php echo $username;?>"> </label>
+			<label> Password: </label><input type="password" name="password"> 
+			<label> Confirm Password: </label><input type="password" name="confirmPassword"> <br>
+			<input type="submit" value="Go" name="submit" class="button">
 		</form>
 		
-</div><!-- close container-->
 
 <?php include("./includes/layouts/footer.php"); ?>
