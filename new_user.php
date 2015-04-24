@@ -53,10 +53,10 @@ if(isset($_POST["submit"])){
 
 		<form method="post" action="" name="userEntry" class="basic-grey">
 		<h1>Create User</h1>
-			<label> Username: <input type="text" name="username" value="<?php echo $username;?>"> </label>
+			<label> Username: </label> <input type="text" name="username" value="<?php echo $username;?>"> 
 			<label> Password: </label><input type="password" name="password"> 
 			<label> Confirm Password: </label><input type="password" name="confirmPassword"> <br>
-			<input type="submit" value="Go" name="submit" class="button">
+			<input type="submit" value="Submit" name="submit" class="button">
 		</form>
 
 
