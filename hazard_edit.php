@@ -69,8 +69,12 @@ if(!$results_categories){
 <?php
 
 if (isset($_POST['submit'])){
-
-    $inf = mysql_real_escape_string(str_replace("'", "`", $_POST['information']));
+	if(isset($_POST["archived"])&&$_POST["archived"]=="yes")
+			$archived=1;
+	else
+			$archived=0;
+		
+    $inf = trim(mysql_real_escape_string(str_replace("'", "`",$_POST['information'])));
     if (empty($_POST['category']) || empty($_POST['location_x']) || empty($_POST['location_x']) || empty($_POST['information']) || empty($_POST['priority'])){
         $message = "Fields cannot be empty!";
         $session->getFlashBag()->add('modification-success', $message);
@@ -89,9 +93,10 @@ if (isset($_POST['submit'])){
                 cat = " . $_POST['category'] . ",
                 info = '". $inf ."',
                 x = " . $_POST['location_x'] . ",
-                 y = " . $_POST['location_y'] . ",
-                 priority = " . $_POST['priority'] .
-            " where hazards.id =" . $hazard_id;
+                y = " . $_POST['location_y'] . ",
+                priority = " . $_POST['priority'] .",
+				archived = " . $archived ."
+				where hazards.id =" . $hazard_id;
 
         $update_results = mysqli_query($connection, $update_sql);
 
@@ -152,6 +157,9 @@ confirm_admin()?>
                 <label>Information:  </label></strong><br><textarea name = 'information' rows="10" cols="40"> <?php echo strip_tags($hazard_record['info'])?></textarea>
 
 				<br>
+				<div class="ui toggle checkbox">
+					<label>Archive?<input type="checkbox" name="archived" value="yes" <?php if($hazard_record["archived"]) echo "checked";?>></label>					
+				</div>
                 <input type="submit" name="submit" value="Submit Changes" id="submit" class="button">
             </form>
         

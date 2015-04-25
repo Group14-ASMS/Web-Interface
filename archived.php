@@ -48,11 +48,11 @@
 	</form>	
 	<br/>
 	<ul class="listmenu">
-		<h1>Hazards</h1>
+		<h1>Archived Hazards</h1>
 	<?php 
 		$display_limit=10;
 		confirm_logged_in();
-		$query="SELECT * FROM hazards WHERE `archived`=0 ORDER BY {$sort_by} {$order} ";
+		$query="SELECT * FROM hazards WHERE `archived`=1 ORDER BY {$sort_by} {$order} ";
 			if($sort_by!="time")
 				$query.=", time DESC";
 		$query.=" LIMIT {$display_limit}"; 

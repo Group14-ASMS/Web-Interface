@@ -31,7 +31,7 @@
 }
 .listmenu h2 {
     margin:  0;
-    border: solid 1px grey;
+	border-bottom:solid 1px grey;
     padding: 0;
 }
 .listmenu h2 a {
@@ -81,7 +81,9 @@
 .listmenu p {
 	height: 95px 
 }
-
+li{
+	
+}
 li.red{
 	background-color:#FF0000;
 }

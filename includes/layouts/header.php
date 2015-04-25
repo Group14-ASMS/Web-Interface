@@ -51,6 +51,7 @@
 				
 						<li role="presentation" aria-haspopup="true"><a href="./index.php" role="menuitem">Hazard List</a></li>
 						<li role="presentation" aria-haspopup="true"><a href="./map.php" role="menuitem">Hazard Map</a></li>
+						<li role="presentation" aria-haspopup="true"><a href="./archived.php" role="menuitem">Archived</a></li>
 					
 			</ul>
 		</div>

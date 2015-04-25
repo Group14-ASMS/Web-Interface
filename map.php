@@ -6,7 +6,7 @@
 
 <?php
 //store all the data from hazards into array $h_list
-$sql = "SELECT * FROM hazards ORDER BY id";
+$sql = "SELECT * FROM hazards WHERE `archived`=0 ORDER BY id";
 $results = mysqli_query($connection,$sql);
 
 $hID_list = array();
