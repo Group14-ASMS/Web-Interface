@@ -35,7 +35,6 @@ confirm_logged_in();
 
 <?php include("./includes/layouts/header.php"); ?>
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/mapinfobox.css">
     <script type="text/javascript"
             src="https://maps.googleapis.com/maps/api/js?">
     </script>
