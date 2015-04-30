@@ -35,15 +35,7 @@ confirm_logged_in();
 
 <?php include("./includes/layouts/header.php"); ?>
 
-    <style type="text/css">
-        #map-canvas {
-            height: 100%;
-			width: 100%;
-            margin: 0;
-            padding: 0;
-			
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="stylesheets/mapinfobox.css">
     <script type="text/javascript"
             src="https://maps.googleapis.com/maps/api/js?">
     </script>
@@ -86,20 +78,27 @@ confirm_logged_in();
                         var iDuplicate = i;
                         funcString += iDuplicate.toString();
                         funcString += ")";
-                        console.log(funcString);
-                        var contentString = '<div id ="content">'+
-                            '<h1>' + hList[6][i] + '</h1>' +
+
+                       var content = '<div id="iw-container">' +
+                            '<div class="iw-title"><div class="centerize"><b>' + hList[6][i] + '</div></b></div>' +
+                            '<div class="iw-content">' +
                             '<p><b>Hazard ID: </b> ' + hList[0][i] + '</p>'+
-                        '<p><b>TIME: </b> ' + hList[1][i] + '</p>' +
-                        '<p><b>COORDINATE: </b> ' + hList[2][i] + ' , ' + hList[3][i] + '</p>' +
-                        '<p><b>INFO: </b> ' + hList[4][i] + '</p>' +
-                        '<p align="center"><button onclick="linkToHazard(\'' + i + '\')">View Details</button></p></div>';
-                        infowindow.setContent(contentString);
+                            '<p><b>TIME: </b> ' + hList[1][i] + '</p>' +
+                            '<p><b>COORDINATE: </b> ' + hList[2][i] + ' , ' + hList[3][i] + '</p>' +
+                            '<p><b>INFO: </b> ' + hList[4][i] + '</p>' +
+                           // '<p align="center"><button onclick="linkToHazard(\'' + i + '\')">View Details</button></p></div>' +
+                            '<div class="centerize"><p><button class="iw-button" align="center" onclick="linkToHazard(\'' + i + '\')">VIEW DETAILS</button><p></div>' +
+                            '</div>';
+
+                        infowindow.setContent(content);
                         infowindow.open(map, marker);
                     }
                 })(marker, i));
+
             }
         }
+
+
         google.maps.event.addDomListener(window, 'load', initialize);
 
         //linking function for button
@@ -112,7 +111,6 @@ confirm_logged_in();
             var targetPG = baseString + pgID;
             window.location.href = targetPG;
         }
-
 
     </script>
     <div id="map-canvas"></div>

@@ -164,7 +164,7 @@ confirm_admin()?>
             </form>
         
 		<div id="image_container" style="float:left;">
-            <img style="width:402px;"src="http://asms-image-storage.s3.amazonaws.com/hazards/<?php echo $hazard_record['photo_id']?>">
+            <img style="width:402px;"src="https://s3-us-west-2.amazonaws.com/asms-test-bucket/<?php echo $hazard_record['photo_id']?>.jpg">
         </div>
 
 </div>
